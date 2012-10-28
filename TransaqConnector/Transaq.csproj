@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A00E5A4B-CB24-474A-8F2B-06A2E370C4F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StockSharp.Transaq</RootNamespace>
+    <AssemblyName>StockSharp.Transaq</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Builds\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Builds\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ecng.Collections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Ecng.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Ecng.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Ecng.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ecng.ComponentModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Ecng.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.2224.30206, Culture=neutral, PublicKeyToken=8d05ee679e87a45f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="StockSharp.Algo">
+      <HintPath>..\..\..\References\StockSharp.Algo.dll</HintPath>
+    </Reference>
+    <Reference Include="StockSharp.BusinessEntities">
+      <HintPath>..\..\..\References\StockSharp.BusinessEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\StockSharpAssemblyInfo.cs">
+      <Link>Properties\StockSharpAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Callback\Response.cs" />
+    <Compile Include="CandleToken.cs" />
+    <Compile Include="Inner\CallbackEventArgs.cs" />
+    <Compile Include="Callback\AllTradesResponse.cs" />
+    <Compile Include="Callback\CandleKindsResponse.cs" />
+    <Compile Include="Callback\ClientTradesCallback.cs" />
+    <Compile Include="Callback\ErrorResponse.cs" />
+    <Compile Include="Callback\LeverageControlCallback.cs" />
+    <Compile Include="Callback\MarketOrderPermitCallback.cs" />
+    <Compile Include="Callback\MarketsResponse.cs" />
+    <Compile Include="Callback\OrdersCallback.cs" />
+    <Compile Include="Callback\OvernightResponse.cs" />
+    <Compile Include="Callback\PositionsResponse.cs" />
+    <Compile Include="Callback\QuotationsCallback.cs" />
+    <Compile Include="Callback\QuotesCallback.cs" />
+    <Compile Include="Callback\SecuritiesResponse.cs" />
+    <Compile Include="Command\ChangePasswordCommand.cs" />
+    <Compile Include="Inner\CandleKind.cs" />
+    <Compile Include="Inner\ClientPosition.cs" />
+    <Compile Include="Inner\ClientTrade.cs" />
+    <Compile Include="Command\CancelOrderCommand.cs" />
+    <Compile Include="Inner\Candle.cs" />
+    <Compile Include="Callback\ClientResponse.cs" />
+    <Compile Include="Inner\CommandResult.cs" />
+    <Compile Include="Command\ConnectCommand.cs" />
+    <Compile Include="Command\DisconnectCommand.cs" />
+    <Compile Include="Inner\CurrencyKind.cs" />
+    <Compile Include="Inner\Formats.cs" />
+    <Compile Include="Command\GetFortsPositionCommand.cs" />
+    <Compile Include="Command\GetHistoryDataCommand.cs" />
+    <Compile Include="Command\GetLeverageControlCommand.cs" />
+    <Compile Include="Command\GetMarketsCommand.cs" />
+    <Compile Include="Command\GetSecuritiesCommand.cs" />
+    <Compile Include="Command\GetServTimeDifferenceCommand.cs" />
+    <Compile Include="Callback\CandlesCallback.cs" />
+    <Compile Include="Command\MakeOrDownCommand.cs" />
+    <Compile Include="Command\NewCondOrderCommand.cs" />
+    <Compile Include="Command\NewOrderBaseCommand.cs" />
+    <Compile Include="Command\NewOrderCommand.cs" />
+    <Compile Include="Inner\FortsCollaterals.cs" />
+    <Compile Include="Inner\FortsMoney.cs" />
+    <Compile Include="Inner\FortsPosition.cs" />
+    <Compile Include="Inner\Market.cs" />
+    <Compile Include="Inner\MarshalUTF8.cs" />
+    <Compile Include="Inner\MoneyPosition.cs" />
+    <Compile Include="Inner\OperationMask.cs" />
+    <Compile Include="Inner\Order.cs" />
+    <Compile Include="Inner\PeriodKind.cs" />
+    <Compile Include="Inner\QuotationStatusKind.cs" />
+    <Compile Include="Inner\QuotationTradingStatusKind.cs" />
+    <Compile Include="Inner\SecurityLeverage.cs" />
+    <Compile Include="Inner\SecurityPosition.cs" />
+    <Compile Include="Inner\SpotLimit.cs" />
+    <Compile Include="Inner\TransaqConnector.cs" />
+    <Compile Include="Inner\Proxy.cs" />
+    <Compile Include="Callback\ServerStatusResponse.cs" />
+    <Compile Include="Command\ServerStatusCommand.cs" />
+    <Compile Include="Command\SubscribeCommand.cs" />
+    <Compile Include="Inner\Quotation.cs" />
+    <Compile Include="Inner\Quote.cs" />
+    <Compile Include="Inner\Security.cs" />
+    <Compile Include="Inner\SecurityKind.cs" />
+    <Compile Include="Inner\Trade.cs" />
+    <Compile Include="Inner\TradeBase.cs" />
+    <Compile Include="Inner\TradeType.cs" />
+    <Compile Include="Inner\TXMLConnector.cs" />
+    <Compile Include="Command\TXmlCommand.cs" />
+    <Compile Include="Command\UnsubscribeCommand.cs" />
+    <Compile Include="Serialization\IXmlSerializerFactory.cs" />
+    <Compile Include="Serialization\TypeParserAttribute.cs" />
+    <Compile Include="Serialization\ValueParser.cs" />
+    <Compile Include="Serialization\XmlNodeType.cs" />
+    <Compile Include="Serialization\XmlSerializationInfo.cs" />
+    <Compile Include="Serialization\XmlSerializer.cs" />
+    <Compile Include="Serialization\XmlSerializerBase.cs" />
+    <Compile Include="Serialization\XmlSerializerFactory.cs" />
+    <Compile Include="TransaqStopCondition.cs" />
+    <Compile Include="TransaqTrader.cs" />
+    <Compile Include="TransaqTraderHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rem copy/Y "$(SolutionDir)TransaqConnector\References\txmlconnector.dll" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>rem copy/Y "$(SolutionDir)\..\..\References\txmlconnector.dll" "$(TargetDir)"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
