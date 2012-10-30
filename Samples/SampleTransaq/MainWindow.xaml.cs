@@ -127,18 +127,14 @@
 					this.Trader.NewTrades += trades => this.GuiAsync(() => _tradesWindow.Trades.AddRange(trades));
 					this.Trader.NewOrders += orders => this.GuiAsync(() => _ordersWindow.Orders.AddRange(orders));
 					this.Trader.NewStopOrders += orders => this.GuiAsync(() => _stopOrdersWindow.Orders.AddRange(orders));
-					this.Trader.NewPortfolios += portfolios =>
-					{
-						// регистрирует портфели на обновление данных
-						portfolios.ForEach(this.Trader.RegisterPortfolio);
-					};
+					this.Trader.NewPortfolios += portfolios => portfolios.ForEach(this.Trader.RegisterPortfolio);
 					this.Trader.NewPositions += positions => this.GuiAsync(() => _portfolioWindow.Positions.AddRange(positions));
 
 					// подписываемся на событие о неудачной регистрации заявок
-					this.Trader.OrdersFailed += OrdersFailed;
+					this.Trader.OrdersRegisterFailed += OrdersFailed;
 
 					// подписываемся на событие о неудачной регистрации стоп-заявок
-					this.Trader.StopOrdersFailed += OrdersFailed;
+					this.Trader.StopOrdersRegisterFailed += OrdersFailed;
 
 					this.ShowSecurities.IsEnabled = this.ShowTrades.IsEnabled =
 					this.ShowMyTrades.IsEnabled = this.ShowOrders.IsEnabled = 

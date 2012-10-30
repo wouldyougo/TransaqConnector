@@ -15,6 +15,7 @@
 
 	using StockSharp.BusinessEntities;
 
+
 	public partial class SecuritiesWindow
 	{
 		private readonly Timer _timer;
@@ -30,21 +31,23 @@
 			this.SecurityTypes.SetDataSource<SecurityTypes>();
             this.SecuritiesDetails.DataContext = this.Securities;
 
-			_timer = TimeSpan.FromSeconds(1).CreateTimer(() => _quotesWindows.SyncDo(d =>
-			{
-				foreach (var pair in d)
-				{
-					var wnd = pair.Value;
+			_timer = new Timer(RefreshQuotes, null, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
+		}
 
-					var depth = MainWindow.Instance.Trader.GetMarketDepth(pair.Key);
-
-					wnd.GuiAsync(() =>
-					{
-						wnd.Quotes.Clear();
-						wnd.Quotes.AddRange(depth);
-					});
-				}
-			}));
+		private void RefreshQuotes(object param)
+		{
+			_quotesWindows.SyncDo(d =>{
+					                      foreach (var pair in d)
+					                      {
+						                      QuotesWindow wnd = pair.Value;
+						                      MarketDepth depth = MainWindow.Instance.Trader.GetMarketDepth(pair.Key);
+						                      wnd.GuiAsync(() =>
+							                                   {
+								                                   wnd.Quotes.Clear();
+								                                   wnd.Quotes.AddRange(depth);
+							                                   });
+					                      }
+				                      });
 		}
 
 		public bool RealClose { get; set; }

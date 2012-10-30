@@ -13,6 +13,8 @@
     {
         static class TransaqTraderHelper
         {
+
+
             public static Security GetMockSecurity(string secID)
             {
                 throw new NotImplementedException();
