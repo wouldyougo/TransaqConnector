@@ -17,7 +17,7 @@
 	{
 		private bool _isConnected;
 
-		public TransaqTrader Trader;
+		public TransaqTrader Trader;     
 
 		private readonly SecuritiesWindow _securitiesWindow = new SecuritiesWindow();
 		private readonly TradesWindow _tradesWindow = new TradesWindow();
