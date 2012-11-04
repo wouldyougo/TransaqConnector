@@ -15,13 +15,13 @@ namespace StockSharp.Transaq.Inner
         private CallBackDelegate _callback;
 
 
-        [DllImport("txmlconnector.dll", CharSet = CharSet.Unicode, PreserveSig = true, CallingConvention = CallingConvention.Winapi)]
+        [DllImport("txmlconnector64.dll", CharSet = CharSet.Unicode, PreserveSig = true, CallingConvention = CallingConvention.Winapi)]
         private static extern bool SetCallback(CallBackDelegate pCallback);
 
-        [DllImport("txmlconnector.dll", CharSet = CharSet.Unicode, PreserveSig = true, CallingConvention = CallingConvention.Winapi)]
+        [DllImport("txmlconnector64.dll", CharSet = CharSet.Unicode, PreserveSig = true, CallingConvention = CallingConvention.Winapi)]
         private static extern IntPtr SendCommand(IntPtr pData);
 
-        [DllImport("txmlconnector.dll", CharSet = CharSet.Unicode, PreserveSig = true, CallingConvention = CallingConvention.Winapi)]
+        [DllImport("txmlconnector64.dll", CharSet = CharSet.Unicode, PreserveSig = true, CallingConvention = CallingConvention.Winapi)]
         private static extern bool FreeMemory(IntPtr pData);
 
 
